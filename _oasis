@@ -1,0 +1,13 @@
+OASISFormat: 0.3
+Name:        ogrillon
+Version:     0.1
+Synopsis:    Library
+Authors:     Philippe Veber
+License:     GPL-3.0
+Plugins:     DevFiles (0.3), META (0.3)
+
+Library ogrillon
+  Path:       src
+  BuildTools: ocamlbuild
+  Modules:    Ogrillon
+  
