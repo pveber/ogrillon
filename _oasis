@@ -11,8 +11,10 @@ Library ogrillon
   Path:         src
   Modules:      Ogrillon
   CSources:     tools.c
+  CCLib:       -L/usr/lib -lOgreMain
 
 Executable test
   Path:	        src
   MainIs:       test.ml
   BuildDepends: ogrillon
+  Custom:	true
