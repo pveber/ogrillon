@@ -5,9 +5,14 @@ Synopsis:    Library
 Authors:     Philippe Veber
 License:     GPL-3.0
 Plugins:     DevFiles (0.3), META (0.3)
+BuildTools:  ocamlbuild
 
 Library ogrillon
-  Path:       src
-  BuildTools: ocamlbuild
-  Modules:    Ogrillon
-  
+  Path:         src
+  Modules:      Ogrillon
+  CSources:     tools.c
+
+Executable test
+  Path:	        src
+  MainIs:       test.ml
+  BuildDepends: ogrillon
