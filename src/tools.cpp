@@ -25,46 +25,13 @@ void demo() {
   Ogre::SceneManager* mSceneMgr;
   Ogre::RenderWindow* mWindow;
   mRoot = new Ogre::Root("", "", "LowLevelOgre.log");
-  Ogre::StringVector required_plugins;
-  required_plugins.push_back("GL RenderSystem");
-  required_plugins.push_back("Octree & Terrain Scene Manager");
- 
-  Ogre::StringVector plugins_toLoad;
-  plugins_toLoad.push_back("RenderSystem_GL");
-  plugins_toLoad.push_back("Plugin_OctreeSceneManager");
-  for (Ogre::StringVector::iterator j = plugins_toLoad.begin(); j != plugins_toLoad.end(); j++)
-    {
-      mRoot->loadPlugin(*j);
-    }
- 
-  // Check if the required plugins are installed and ready for use
-  // If not: exit the application
-  Ogre::Root::PluginInstanceList ip = mRoot->getInstalledPlugins();
-  for (Ogre::StringVector::iterator j = required_plugins.begin(); j != required_plugins.end(); j++)
-    {
-      bool found = false;
-      // try to find the required plugin in the current installed plugins
-      for (Ogre::Root::PluginInstanceList::iterator k = ip.begin(); k != ip.end(); k++)
-        {
-	  if ((*k)->getName() == *j)
-            {
-	      found = true;
-	      break;
-            }
-        }
-      if (!found)  // return false because a required plugin is not available
-        {
-	  exit(42);
-        }
-    }
+  mRoot->loadPlugin("/usr/lib/x86_64-linux-gnu/OGRE-1.7.4/RenderSystem_GL.so");
+  mRoot->loadPlugin("/usr/lib/x86_64-linux-gnu/OGRE-1.7.4/Plugin_OctreeSceneManager.so");
   
   //-------------------------------------------------------------------------------------
   // setup resources
   // Only add the minimally required resource locations to load up the Ogre head mesh
-  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../../media/materials/programs", "FileSystem", "General");
-  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../../media/materials/scripts", "FileSystem", "General");
-  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../../media/materials/textures", "FileSystem", "General");
-  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../../media/models", "FileSystem", "General");
+  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("/home/pveber/usr/src/ogre_src_v1-8-0/Tools/MaterialEditor/bin/resources/models", "FileSystem", "General");
   
   //-------------------------------------------------------------------------------------
   // configure
