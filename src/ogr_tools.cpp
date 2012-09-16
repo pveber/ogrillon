@@ -97,20 +97,15 @@ void demo() {
   //-------------------------------------------------------------------------------------
   
   //mRoot->startRendering();
-  while(true)
+  while(!mWindow->isClosed())
     {
       // Pump window messages for nice behaviour
       Ogre::WindowEventUtilities::messagePump();
       
       // Render a frame
       mRoot->renderOneFrame();
-      
-      if(mWindow->isClosed())
-        {
-	  exit(42);
-        }
     }
-  printf("What ??\n");
+  printf("What ?!\n");
 }
 
 extern "C" {
