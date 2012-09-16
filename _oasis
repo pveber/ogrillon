@@ -10,7 +10,7 @@ BuildTools:  ocamlbuild
 Library ogrillon
   Path:         src
   Modules:      Ogrillon
-  CSources:     ogr_tools.c
+  CSources:     ogr_base_stub.c
   CCLib:       -L/usr/lib -lOgreMain
 
 Executable test
