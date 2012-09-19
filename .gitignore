@@ -12,3 +12,6 @@
 *#
 setup.data
 _build
+*.byte
+*.native
+*.log

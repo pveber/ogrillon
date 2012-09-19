@@ -13,6 +13,7 @@ extern "C" {
 using namespace Ogre;
 
 extern "C" CAMLprim value ogr_create_root(value plugin, value config, value log) {
-  Root* r = new Root("","","");
+  printf("%s\n",String_val(plugin));
+  Root* r = new Root(String_val(plugin),String_val(config),String_val(log));
   return (value) r;
 }
