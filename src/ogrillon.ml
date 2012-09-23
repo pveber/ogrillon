@@ -1,1 +1,1 @@
-external demo : unit -> unit = "ogrillon_demo"
+module Root = Ogr_root

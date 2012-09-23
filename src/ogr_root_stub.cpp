@@ -12,8 +12,12 @@ extern "C" {
 
 using namespace Ogre;
 
-extern "C" CAMLprim value ogr_create_root(value plugin, value config, value log) {
-  printf("%s\n",String_val(plugin));
+extern "C" CAMLprim value ogr_root_create(value plugin, value config, value log) {
   Root* r = new Root(String_val(plugin),String_val(config),String_val(log));
   return (value) r;
+}
+
+extern "C" CAMLprim value ogr_root_delete(value obj) {
+  delete (Root *) obj;
+  return Val_unit;
 }

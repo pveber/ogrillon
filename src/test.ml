@@ -1,3 +1,5 @@
+open Ogrillon
+
 let () = 
-  let root = Ogr_root.create_root () in
+  let root = Root.create () in
   print_endline "Yo !"

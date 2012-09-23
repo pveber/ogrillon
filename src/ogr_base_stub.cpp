@@ -19,6 +19,8 @@ extern "C" {
 #include <OgrePlugin.h>
 #include <OgreRenderSystem.h>
 
+using namespace Ogre;
+
 void demo() {
   Ogre::Root *mRoot;
   Ogre::Camera* mCamera;
