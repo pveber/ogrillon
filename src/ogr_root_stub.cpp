@@ -21,3 +21,9 @@ extern "C" CAMLprim value ogr_root_delete(value obj) {
   delete (Root *) obj;
   return Val_unit;
 }
+
+extern "C" CAMLprim value ogr_root_getRenderSystemByName(value root, value name) {
+  RenderSystem* r = ((Root*) root)->getRenderSystemByName(String_val(name));
+  if(r == NULL) printf("biq\n");
+  return (value) r;
+}

@@ -1,17 +1,14 @@
 type obj = Ogr_base.obj
 
-class t obj = object
-  method delete = delete_obj obj
-end
-
-
 external create_obj : string -> string -> string -> obj = "ogr_root_create"
 external delete_obj : obj -> unit = "ogr_root_delete"
+external getRenderSystemByName : obj -> string -> obj = "ogr_root_getRenderSystemByName"
+
+class t obj = object
+  method delete = delete_obj obj
+  method getRenderSystemByName name = 
+    new Ogr_render_system.t (getRenderSystemByName obj name)
+end
 
 let create ?(plugin = "") ?(config = "") ?(log = "ogrillon.log") () =
-  let obj = create_obj plugin config log in
-  object
-    inherit t obj
-    initializer
-      Gc.finalise delete_obj obj
-  end
+  new t (create_obj plugin config log)
