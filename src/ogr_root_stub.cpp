@@ -27,3 +27,8 @@ extern "C" CAMLprim value ogr_root_getRenderSystemByName(value root, value name)
   if(r == NULL) printf("biq\n");
   return (value) r;
 }
+
+extern "C" CAMLprim value ogr_root_setRenderSystem(value root, value rs) {
+  ((Root*) root)->setRenderSystem((RenderSystem *) rs);
+  return Val_unit;
+}
