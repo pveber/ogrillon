@@ -10,5 +10,8 @@ let () =
   let rw = root#initialise ~window_title:"Ogrillon test" () in
   let sm = root#create_scene_manager Ogr_scene_manager.Exterior_close "Default Scene Manager" in
   let cam = sm#create_camera "PlayerCam" in
+  cam#look_at ~x:0. ~y:0. ~z:(-300.) ;
+  cam#set_position ~x:0. ~y:0. ~z:80. ;
+  cam#set_near_clip_distance 5. ;
   root#delete
 
