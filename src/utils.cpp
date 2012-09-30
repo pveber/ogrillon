@@ -9,9 +9,10 @@ extern "C" {
 }
 
 void null_pointer_exn() {
-	static value*  e = NULL;
-	if(e == NULL) {
-		e = caml_named_value("Null_pointer_exn");
-	}
-	caml_raise_constant(*e);
+  static value*  e = NULL;
+  if(e == NULL) {
+    e = caml_named_value("Null_pointer_exn");
+  }
+  caml_raise_constant(*e);
 }
+

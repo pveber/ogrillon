@@ -8,5 +8,6 @@ let () =
   rs#set_config_option "Video Mode" "800 x 600 @ 32-bit" ;
   root#setRenderSystem rs ;
   let rw = root#initialise ~window_title:"Ogrillon test" () in
+  let sm = root#create_scene_manager Ogr_scene_manager.Exterior_close "Default Scene Manager" in
   root#delete
 

@@ -10,6 +10,7 @@ extern "C" {
 
 #include <OgreRoot.h>
 #include "utils.h"
+#include "ogr_scene_manager_stub.h"
 
 using namespace Ogre;
 
@@ -40,4 +41,10 @@ extern "C" CAMLprim value ogr_root_setRenderSystem(value root, value rs) {
 extern "C" CAMLprim value ogr_root_initialise(value root, value window_title) {
   RenderWindow* rw = ((Root*) root)->initialise(true, String_val(window_title));
   return (value) rw;
+}
+
+extern "C" CAMLprim value ogr_root_create_scene_manager(value root, value scene_type, value name) 
+{
+  SceneManager* sm = ((Root *) root)->createSceneManager(sceneTypeMask(scene_type), String_val(name));
+  return (value) sm;
 }
