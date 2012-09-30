@@ -14,5 +14,6 @@ let () =
   cam#set_position ~x:0. ~y:0. ~z:80. ;
   cam#set_near_clip_distance 5. ;
   let vp = rw#add_viewport cam in
+  vp#set_background_color ~r:0. ~g:0. ~b:0. ;
   root#delete
 

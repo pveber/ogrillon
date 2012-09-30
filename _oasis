@@ -22,7 +22,8 @@ Library ogrillon
                 render_system_stub.c,
                 render_window_stub.c,
                 root_stub.c,
-                scene_manager_stub.h, scene_manager_stub.c
+                scene_manager_stub.h, scene_manager_stub.c,
+                viewport_stub.c
   CCLib:       -L/usr/lib -lOgreMain
   Pack:        true
 
