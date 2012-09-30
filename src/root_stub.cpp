@@ -48,3 +48,9 @@ extern "C" CAMLprim value ogr_root_create_scene_manager(value root, value scene_
   SceneManager* sm = ((Root *) root)->createSceneManager(sceneTypeMask(scene_type), String_val(name));
   return (value) sm;
 }
+
+extern "C" CAMLprim value ogr_root_add_resource_location(value root, value name, value kind, value group)
+{
+  ((Root *) root)->addResourceLocation(String_val(name), String_val(kind), String_val(group));
+  return Val_unit;
+}
