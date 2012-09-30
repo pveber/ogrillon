@@ -14,7 +14,8 @@ extern "C" {
 
 using namespace Ogre;
 
-SceneTypeMask sceneTypeMask(value scene_type) {
+SceneTypeMask sceneTypeMask(value scene_type) 
+{
   switch(Int_val(scene_type)) {
   case 0: return ST_GENERIC;
   case 1: return ST_EXTERIOR_CLOSE;
@@ -27,3 +28,8 @@ SceneTypeMask sceneTypeMask(value scene_type) {
   }
 }
 
+extern "C" CAMLprim value ogr_scene_manager_create_camera(value sm, value name)
+{
+  Camera* c = ((SceneManager*) sm)->createCamera(String_val(name));
+  return (value) c;
+}

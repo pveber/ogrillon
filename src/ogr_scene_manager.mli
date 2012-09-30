@@ -8,5 +8,6 @@ type scene_type =
 type obj = Ogr_base.obj
 
 class t : obj -> object
+  method create_camera : string -> Ogr_camera.t
   method obj : obj
 end
