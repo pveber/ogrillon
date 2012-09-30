@@ -19,3 +19,14 @@ extern "C" CAMLprim value ogr_viewport_set_background_color(value vp, value r, v
   ((Viewport*) vp)->setBackgroundColour(ColourValue(Double_val(r),Double_val(g),Double_val(b)));
   return Val_unit;
 }
+
+extern "C" CAMLprim value ogr_viewport_get_actual_width(value vp)
+{
+  return copy_double(((Viewport*) vp)->getActualWidth());
+}
+
+extern "C" CAMLprim value ogr_viewport_get_actual_height(value vp)
+{
+  return copy_double(((Viewport*) vp)->getActualHeight());
+}
+
