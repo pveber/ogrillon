@@ -18,10 +18,16 @@ let rule_o_of_cpp () =
   let action env _ = Cmd (S [cpp_compiler; ccopt; A "-c"; P (env "%.cpp"); A "-o"; P (env "%.o")]) in
   rule "o_of_cpp" ~deps ~prod action
 
+let rule_o_of_h_cpp () =
+  let deps = "%.cpp" :: "%.h" :: [] and prod = "%.o" in
+  let action env _ = Cmd (S [cpp_compiler; ccopt; A "-c"; P (env "%.cpp"); A "-o"; P (env "%.o")]) in
+  rule "o_of_h_cpp" ~deps ~prod action
+
 let () = dispatch & fun h ->
   dispatch_default h;
   match h with
   | Before_rules ->
+      rule_o_of_h_cpp ();
       rule_o_of_cpp ();
       flag ["doc"; "extension:mli"] (A "-hide-warnings")
   | _ -> ()
