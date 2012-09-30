@@ -9,7 +9,7 @@ BuildTools:  ocamlbuild
 
 Library ogrillon
   Path:         src
-  Modules:      Ogrillon, Ogr_base, Ogr_render_system, Ogr_root
+  Modules:      Ogrillon, Ogr_base, Ogr_render_system, Ogr_render_window, Ogr_root
   CSources:     utils.h, utils.c, ogr_base_stub.c, ogr_render_system_stub.c, ogr_root_stub.c
   CCLib:       -L/usr/lib -lOgreMain
 

@@ -36,3 +36,8 @@ extern "C" CAMLprim value ogr_root_setRenderSystem(value root, value rs) {
   ((Root*) root)->setRenderSystem((RenderSystem *) rs);
   return Val_unit;
 }
+
+extern "C" CAMLprim value ogr_root_initialise(value root, value window_title) {
+  RenderWindow* rw = ((Root*) root)->initialise(true, String_val(window_title));
+  return (value) rw;
+}

@@ -7,5 +7,6 @@ let () =
   rs#set_config_option "VSync" "No" ;
   rs#set_config_option "Video Mode" "800 x 600 @ 32-bit" ;
   root#setRenderSystem rs ;
+  let rw = root#initialise ~window_title:"Ogrillon test" () in
   root#delete
 
