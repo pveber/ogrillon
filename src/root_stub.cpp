@@ -10,7 +10,7 @@ extern "C" {
 
 #include <OgreRoot.h>
 #include "utils.h"
-#include "ogr_scene_manager_stub.h"
+#include "scene_manager_stub.h"
 
 using namespace Ogre;
 
@@ -27,13 +27,13 @@ extern "C" CAMLprim value ogr_root_delete(value obj) {
   return Val_unit;
 }
 
-extern "C" CAMLprim value ogr_root_getRenderSystemByName(value root, value name) {
+extern "C" CAMLprim value ogr_root_get_render_system_by_name(value root, value name) {
   RenderSystem* rs = ((Root*) root)->getRenderSystemByName(String_val(name));
   if(rs == NULL) null_pointer_exn();
   return (value) rs;
 }
 
-extern "C" CAMLprim value ogr_root_setRenderSystem(value root, value rs) {
+extern "C" CAMLprim value ogr_root_set_render_system(value root, value rs) {
   ((Root*) root)->setRenderSystem((RenderSystem *) rs);
   return Val_unit;
 }

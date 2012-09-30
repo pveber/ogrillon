@@ -1,4 +1,4 @@
-type obj = Ogr_base.obj
+type obj = Base.obj
 
 external look_at : obj -> float -> float -> float -> unit = "ogr_camera_look_at"
 external set_near_clip_distance : obj -> float -> unit = "ogr_camera_set_near_clip_distance"

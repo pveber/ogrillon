@@ -5,9 +5,9 @@ type scene_type =
   | Exterior_real_far
   | Interior
 
-type obj = Ogr_base.obj
+type obj = Base.obj
 
 class t : obj -> object
-  method create_camera : string -> Ogr_camera.t
+  method create_camera : string -> Camera.t
   method obj : obj
 end

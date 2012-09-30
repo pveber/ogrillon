@@ -1,4 +1,4 @@
-type obj = Ogr_base.obj
+type obj = Base.obj
 
 class t : obj -> object
   method obj : obj

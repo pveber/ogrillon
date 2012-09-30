@@ -10,7 +10,7 @@ extern "C" {
 }
 
 #include "utils.h"
-#include "ogr_scene_manager_stub.h"
+#include "scene_manager_stub.h"
 
 using namespace Ogre;
 

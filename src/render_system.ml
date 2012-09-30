@@ -1,4 +1,4 @@
-type obj = Ogr_base.obj
+type obj = Base.obj
 
 external setConfigOption : obj -> string -> string -> unit = "ogr_render_system_set_config_option"
 
