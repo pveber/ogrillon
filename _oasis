@@ -9,11 +9,19 @@ BuildTools:  ocamlbuild
 
 Library ogrillon
   Path:         src
-  Modules:      Ogrillon, Ogr_base, Ogr_camera, Ogr_render_system, Ogr_render_window, Ogr_root, Ogr_scene_manager
+  Modules:      Ogrillon, 
+                Ogr_base, 
+                Ogr_camera, 
+                Ogr_render_system, 
+                Ogr_render_window, 
+                Ogr_root, 
+                Ogr_scene_manager,
+                Ogr_viewport
   CSources:     utils.h, utils.c,
                 ogr_base_stub.c,
                 ogr_camera_stub.c,
                 ogr_render_system_stub.c,
+                ogr_render_window_stub.c,
                 ogr_root_stub.c,
                 ogr_scene_manager_stub.h, ogr_scene_manager_stub.c
   CCLib:       -L/usr/lib -lOgreMain

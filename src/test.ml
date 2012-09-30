@@ -13,5 +13,6 @@ let () =
   cam#look_at ~x:0. ~y:0. ~z:(-300.) ;
   cam#set_position ~x:0. ~y:0. ~z:80. ;
   cam#set_near_clip_distance 5. ;
+  let vp = rw#add_viewport cam in
   root#delete
 
