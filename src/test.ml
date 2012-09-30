@@ -15,5 +15,6 @@ let () =
   cam#set_near_clip_distance 5. ;
   let vp = rw#add_viewport cam in
   vp#set_background_color ~r:0. ~g:0. ~b:0. ;
+  cam#set_aspect_ratio (vp#get_actual_width /. vp#get_actual_height) ;
   root#delete
 

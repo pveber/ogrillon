@@ -32,3 +32,8 @@ extern "C" CAMLprim value ogr_camera_set_position(value cam, value x, value y, v
   return Val_unit;
 }
 
+extern "C" CAMLprim value ogr_camera_set_aspect_ratio(value cam, value r)
+{
+  ((Camera*) cam)->setAspectRatio(Double_val(r));
+  return Val_unit;
+}
