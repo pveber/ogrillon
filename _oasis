@@ -9,11 +9,12 @@ BuildTools:  ocamlbuild
 
 Library ogrillon
   Path:         src
-  Modules:      Base, 
-                Camera, 
-                Render_system, 
-                Render_window, 
-                Root, 
+  Modules:      Base,
+                Camera,
+                Entity,
+                Render_system,
+                Render_window,
+                Root,
                 Scene_manager,
                 Viewport
   CSources:     utils.h, utils.c,
@@ -32,3 +33,4 @@ Executable test
   MainIs:       test.ml
   BuildDepends: ogrillon
   Custom:	true
+  Install:      false

@@ -26,14 +26,13 @@ void demo() {
   Ogre::Camera* mCamera;
   Ogre::SceneManager* mSceneMgr;
   Ogre::RenderWindow* mWindow;
-  mRoot = new Ogre::Root("", "", "LowLevelOgre.log");
-  mRoot->loadPlugin("/usr/lib/x86_64-linux-gnu/OGRE-1.7.4/RenderSystem_GL.so");
-  mRoot->loadPlugin("/usr/lib/x86_64-linux-gnu/OGRE-1.7.4/Plugin_OctreeSceneManager.so");
+  mRoot = new Ogre::Root("plugins.cfg", "resources.cfg", "LowLevelOgre.log");
   
   //-------------------------------------------------------------------------------------
   // setup resources
   // Only add the minimally required resource locations to load up the Ogre head mesh
-  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("/home/pveber/usr/src/ogre_src_v1-8-0/Tools/MaterialEditor/bin/resources/models", "FileSystem", "General");
+  //  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("/home/pveber/tmp/ogre_src_v1-8-0/Tools/MaterialEditor/bin/resources/models/", "FileSystem", "General");
+  //  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("/home/pveber/usr/src/ogre_src_v1-8-0/Tools/MaterialEditor/bin/resources/models", "FileSystem", "General");
   
   //-------------------------------------------------------------------------------------
   // configure
