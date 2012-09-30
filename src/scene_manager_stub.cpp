@@ -33,3 +33,10 @@ extern "C" CAMLprim value ogr_scene_manager_create_camera(value sm, value name)
   Camera* c = ((SceneManager*) sm)->createCamera(String_val(name));
   return (value) c;
 }
+
+extern "C" CAMLprim value ogr_scene_manager_create_entity_from_file(value sm, value name, value filename)
+{
+  Entity* e = ((SceneManager*) sm)->createEntity(String_val(name), String_val(filename));
+  return (value) e;
+}
+
