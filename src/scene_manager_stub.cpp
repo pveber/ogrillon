@@ -40,3 +40,9 @@ extern "C" CAMLprim value ogr_scene_manager_create_entity_from_file(value sm, va
   return (value) e;
 }
 
+extern "C" CAMLprim value ogr_scene_manager_get_root_scene_node(value sm)
+{
+  SceneNode* e = ((SceneManager*) sm)->getRootSceneNode();
+  return (value) e;
+}
+

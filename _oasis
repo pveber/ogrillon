@@ -16,6 +16,7 @@ Library ogrillon
                 Render_window,
                 Root,
                 Scene_manager,
+                Scene_node,
                 Viewport
   CSources:     utils.h, utils.c,
                 base_stub.c,

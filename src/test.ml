@@ -1,7 +1,7 @@
 open Ogrillon
 
 let () = 
-  let root = Root.create ~plugin:"plugins.cfg" () in
+  let root = Root.create ~plugin:"/usr/share/OGRE-1.7.4/plugins.cfg" () in
   root#add_resource_location ~path:"media/models" ~group:"General" ~kind:`FileSystem ;
   root#add_resource_location ~path:"media/materials/scripts" ~group:"General" ~kind:`FileSystem ;
   root#add_resource_location ~path:"media/materials/textures" ~group:"General" ~kind:`FileSystem ;
@@ -20,5 +20,6 @@ let () =
   vp#set_background_color ~r:0. ~g:0. ~b:0. ;
   cam#set_aspect_ratio (vp#get_actual_width /. vp#get_actual_height) ;
   let ogre_head = sm#create_entity_from_file ~id:"Head" ~path:"ogrehead.mesh" in
+  let head_node = sm#get_root_scene_node in
   root#delete
 
