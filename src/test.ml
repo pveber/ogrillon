@@ -20,6 +20,7 @@ let () =
   vp#set_background_color ~r:0. ~g:0. ~b:0. ;
   cam#set_aspect_ratio (vp#get_actual_width /. vp#get_actual_height) ;
   let ogre_head = sm#create_entity_from_file ~id:"Head" ~path:"ogrehead.mesh" in
-  let head_node = sm#get_root_scene_node in
+  let head_node = sm#get_root_scene_node#create_child_scene_node ~translate:(1.,0.,0.) () in
+  head_node#attach_object ogre_head ;
   root#delete
 

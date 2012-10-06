@@ -12,6 +12,7 @@ Library ogrillon
   Modules:      Base,
                 Camera,
                 Entity,
+                Movable_object,
                 Render_system,
                 Render_window,
                 Root,
@@ -25,6 +26,7 @@ Library ogrillon
                 render_window_stub.c,
                 root_stub.c,
                 scene_manager_stub.h, scene_manager_stub.c,
+                scene_node_stub.c,
                 viewport_stub.c
   CCLib:       -L/usr/lib -lOgreMain
   Pack:        true
