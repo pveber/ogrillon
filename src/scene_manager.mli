@@ -12,4 +12,5 @@ class t : obj -> object
   method create_entity_from_file : id:string -> path:string -> Entity.t
   method get_root_scene_node : Scene_node.t
   method obj : obj
+  method set_ambient_light : r:float -> g:float ->b:float -> unit
 end

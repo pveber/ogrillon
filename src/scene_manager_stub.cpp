@@ -46,3 +46,8 @@ extern "C" CAMLprim value ogr_scene_manager_get_root_scene_node(value sm)
   return (value) e;
 }
 
+extern "C" CAMLprim value ogr_scene_manager_set_ambient_light(value sm, value r, value g, value b)
+{
+  ((SceneManager*) sm)->setAmbientLight(ColourValue(Double_val(r), Double_val(g), Double_val(b)));
+  return Val_unit;
+}
