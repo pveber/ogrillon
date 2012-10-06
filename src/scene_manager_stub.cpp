@@ -51,3 +51,9 @@ extern "C" CAMLprim value ogr_scene_manager_set_ambient_light(value sm, value r,
   ((SceneManager*) sm)->setAmbientLight(ColourValue(Double_val(r), Double_val(g), Double_val(b)));
   return Val_unit;
 }
+
+extern "C" CAMLprim value ogr_scene_manager_create_light(value sm, value name)
+{
+  Light* l = ((SceneManager*) sm)->createLight(String_val(name));
+  return (value) l;
+}

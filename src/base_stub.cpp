@@ -31,8 +31,7 @@ void demo() {
   //-------------------------------------------------------------------------------------
   // setup resources
   // Only add the minimally required resource locations to load up the Ogre head mesh
-  //  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("/home/pveber/usr/src/ogre_src_v1-8-0/Samples/Media/models", "FileSystem", "General");
-  //  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("/home/pveber/usr/src/ogre_src_v1-8-0/Tools/MaterialEditor/bin/resources/models", "FileSystem", "General");
+   Ogre::ResourceGroupManager::getSingleton().addResourceLocation("media/models", "FileSystem", "General");
   
   //-------------------------------------------------------------------------------------
   // configure

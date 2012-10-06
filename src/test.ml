@@ -1,5 +1,9 @@
 open Ogrillon
 
+(* let () = *)
+(*   Base.demo () ; *)
+(*   exit 42 *)
+
 let () = 
   let root = Root.create ~plugin:"/usr/share/OGRE-1.7.4/plugins.cfg" () in
   root#add_resource_location ~path:"media/models" ~group:"General" ~kind:`FileSystem ;
@@ -23,6 +27,8 @@ let () =
   let head_node = sm#get_root_scene_node#create_child_scene_node ~translate:(1.,0.,0.) () in
   head_node#attach_object ogre_head ;
   sm#set_ambient_light ~r:0.5 ~g:0.5 ~b:0.5 ;
+  let l = sm#create_light "MainLight" in
+  l#set_position ~x:20. ~y:80. ~z:50. ;
   root#render_one_frame ;
   ignore (read_line ()) ;
   root#delete
