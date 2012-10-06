@@ -7,6 +7,7 @@ class t : obj -> object
   method get_render_system_by_name : string -> Render_system.t
   method initialise : ?window_title:string -> unit -> Render_window.t
   method obj : obj
+  method render_one_frame : unit
   method set_render_system : Render_system.t -> unit
 end
 

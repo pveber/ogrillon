@@ -22,5 +22,7 @@ let () =
   let ogre_head = sm#create_entity_from_file ~id:"Head" ~path:"ogrehead.mesh" in
   let head_node = sm#get_root_scene_node#create_child_scene_node ~translate:(1.,0.,0.) () in
   head_node#attach_object ogre_head ;
+  root#render_one_frame ;
+  ignore (read_line ()) ;
   root#delete
 

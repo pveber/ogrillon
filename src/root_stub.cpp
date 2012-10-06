@@ -54,3 +54,8 @@ extern "C" CAMLprim value ogr_root_add_resource_location(value root, value name,
   ((Root *) root)->addResourceLocation(String_val(name), String_val(kind), String_val(group));
   return Val_unit;
 }
+
+extern "C" CAMLprim value ogr_root_render_one_frame(value root) {
+  ((Root*) root)->renderOneFrame();
+  return Val_unit;
+}

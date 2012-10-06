@@ -6,6 +6,7 @@ external create_scene_manager : obj -> Scene_manager.scene_type -> string -> obj
 external delete_obj : obj -> unit = "ogr_root_delete"
 external get_render_system_by_name : obj -> string -> obj = "ogr_root_get_render_system_by_name"
 external initialize : obj -> string -> obj = "ogr_root_initialise"
+external render_one_frame : obj -> unit = "ogr_root_render_one_frame"
 external set_render_system : obj -> obj -> unit = "ogr_root_set_render_system"
 
 let string_of_kind = function
@@ -23,6 +24,7 @@ class t obj = object
   method initialise ?(window_title = "Ogrillon Render Window") () = 
     new Render_window.t (initialize obj window_title)
   method obj : obj = obj
+  method render_one_frame = render_one_frame obj
   method set_render_system (rs : Render_system.t) = set_render_system obj rs#obj
 end
 
