@@ -31,7 +31,10 @@ void demo() {
   //-------------------------------------------------------------------------------------
   // setup resources
   // Only add the minimally required resource locations to load up the Ogre head mesh
-   Ogre::ResourceGroupManager::getSingleton().addResourceLocation("media/models", "FileSystem", "General");
+  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("media/models", "FileSystem", "General");
+  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("media/materials/scripts", "FileSystem", "General");
+  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("media/materials/programs", "FileSystem", "General");
+  Ogre::ResourceGroupManager::getSingleton().addResourceLocation("media/materials/textures", "FileSystem", "General");
   
   //-------------------------------------------------------------------------------------
   // configure
@@ -105,7 +108,6 @@ void demo() {
       // Render a frame
       mRoot->renderOneFrame();
     }
-  printf("What ?!\n");
 }
 
 extern "C" {

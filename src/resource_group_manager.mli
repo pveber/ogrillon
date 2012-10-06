@@ -2,6 +2,8 @@ type obj = Base.obj
 
 class t : obj -> 
 object
+  method initialise_all_resource_groups : unit
   method obj : obj
-  method set_material_name : string -> unit
 end
+
+val get : unit -> t

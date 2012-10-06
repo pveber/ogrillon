@@ -16,20 +16,25 @@ Library ogrillon
                 Movable_object,
                 Render_system,
                 Render_window,
+                Resource_group_manager,
                 Root,
                 Scene_manager,
                 Scene_node,
-                Viewport
+                Viewport,
+                Window_event_utilities
   CSources:     utils.h, utils.c,
                 base_stub.c,
                 camera_stub.c,
+                entity_stub.c,
                 light_stub.c,
                 render_system_stub.c,
                 render_window_stub.c,
+                resource_group_manager_stub.c,
                 root_stub.c,
                 scene_manager_stub.h, scene_manager_stub.c,
                 scene_node_stub.c,
-                viewport_stub.c
+                viewport_stub.c,
+                window_event_utilities_stub.c
   CCLib:       -L/usr/lib -lOgreMain
   Pack:        true
 
